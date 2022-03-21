@@ -19,7 +19,6 @@ y = dataset.iloc[:, -1].values
 print(X)
 print(y)
 
-
 # Encoding categorical data
 le = LabelEncoder()
 X[:, 2] = le.fit_transform(X[:, 2])
@@ -29,11 +28,9 @@ ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [1])], remaind
 X = np.array(ct.fit_transform(X))
 print(X[:, :])
 
-
 # Splitting dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 print(y_test)
-
 
 # Feature scaling
 sc = StandardScaler()
@@ -50,3 +47,6 @@ ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
 
 # Second layer
 ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
+
+# Output layer
+ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
