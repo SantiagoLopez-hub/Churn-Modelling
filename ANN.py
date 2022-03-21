@@ -47,3 +47,6 @@ ann = tf.keras.models.Sequential()
 
 # Input layer and first hidden layer
 ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
+
+# Second layer
+ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
