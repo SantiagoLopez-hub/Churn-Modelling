@@ -39,3 +39,9 @@ print(y_test)
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
+
+
+
+# Creating ANN
+ann = tf.keras.models.Sequential()
+
