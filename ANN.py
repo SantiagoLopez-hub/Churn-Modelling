@@ -71,3 +71,18 @@ print(
     # if more than 0.5, it is true, else, false
     > 0.5
 )
+
+
+
+# Predict results
+y_pred = ann.predict(X_test)
+y_pred = (y_pred > 0.5)
+print(
+	np.concatenate(
+		(
+			y_pred.reshape(len(y_pred), 1),
+			y_test.reshape(len(y_test), 1)
+		), 1
+	)
+)
+
