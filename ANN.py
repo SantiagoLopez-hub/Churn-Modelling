@@ -11,6 +11,8 @@ from sklearn.model_selection import train_test_split
 
 from sklearn.preprocessing import StandardScaler
 
+from sklearn.metrics import confusion_matrix, accuracy_score
+
 
 
 dataset = pd.read_csv('Churn_Modelling.csv')
@@ -85,4 +87,11 @@ print(
 		), 1
 	)
 )
+
+
+
+# Creating confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
+accuracy_score(y_test, y_pred)
 
