@@ -58,3 +58,16 @@ ann.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Train ANN
 ann.fit(X_train, y_train, batch_size=32, epochs=100)
+
+
+
+# Predict client action
+print(
+    ann.predict(
+        sc.transform(
+            [[1, 0, 0, 600, 1, 40, 3, 60000, 2, 1, 1, 50000]]
+        )
+    )
+    # if more than 0.5, it is true, else, false
+    > 0.5
+)
