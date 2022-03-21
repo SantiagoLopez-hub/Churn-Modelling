@@ -45,3 +45,5 @@ X_test = sc.transform(X_test)
 # Creating ANN
 ann = tf.keras.models.Sequential()
 
+# Input layer and first hidden layer
+ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
