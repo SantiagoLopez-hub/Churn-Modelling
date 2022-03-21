@@ -53,5 +53,8 @@ ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
 
 
 
-# Training ANN
+# Compile ANN
 ann.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Train ANN
+ann.fit(X_train, y_train, batch_size=32, epochs=100)
